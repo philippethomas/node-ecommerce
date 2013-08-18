@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  div.row
+      div.container#mainContent(data-bind="foreach: rows")
+          ul.row(data-bind="foreach: $data")
+              li.widget.col-lg-3
+                  div.polaroid
+                      p(data-bind="html: title")
+                      // ko if:isHot
+                      span.label.label-danger.Hot Hot Sale
+                      // /ko
+                      img(data-bind="attr:{ src : imgs[0] , id: id}, event:{ mouseover: EnableAction, mouseout: DisableAction}")
+                      div.overlay(style="opacity:0")
+                          div.overlay-top
+                              ul.action
+                                  li.pull-left
+                                      a.hint--top.badge.pull-left(data-hint="Like It",data-bind="click: Detail")
+                                          i.icon-smile.icon-2x
+                                  li.pull-left
+                                      a.hint--top.badge.pull-left(data-hint="View It",data-bind="click: Detail")
+                                          i.icon-zoom-in.icon-2x
+                                  li.pull-left
+                                      a.hint--top.badge.pull-left(data-hint="Cart It",data-bind="click: Buy")
+                                          i.icon-shopping-cart.icon-2x
+                                  li.pull-left
+                                      a.hint--top.badge.pull-left(data-hint="Comment It",data-bind="click: Detail")
+                                          i.icon-comment.icon-2x

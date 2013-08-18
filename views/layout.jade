@@ -1,0 +1,29 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/hint.css')
+    link(rel='stylesheet', href='/stylesheets/chat.css')
+    link(rel='stylesheet', href='/stylesheets/shopcart.css')
+    link(rel='stylesheet', href='/stylesheets/slider.css')
+    link(rel='stylesheet', href='/stylesheets/searchPanel.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+  body
+    div.container
+      include  header
+      include  searchPanel
+      include  sideMenus
+      block content
+  script(type='text/javascript',src='//code.jquery.com/jquery-1.10.1.min.js')
+  script(type='text/javascript',src='//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js')
+  script(src="/javascripts/thirds/bootstrap-slider.js")
+  script(src="/javascripts/thirds/knockout.js")
+  script(src="/javascripts/thirds/underscore-min.js")
+  script(src="/javascripts/product.js")
+  script(src="/javascripts/shopcart.js")
+  script(src="/javascripts/chat.js")
+  script(src="/javascripts/app.js")
+  footer
+      include footer

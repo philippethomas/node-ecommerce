@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "T-Shirt-1",
+        "price": "99.99",
+        "type": "1",
+        "star": 5,
+        "comments": "",
+        "isHot": true,
+        "isCoupon": false,
+        "imgs": [
+            "http://www.worldwaterrelief.org/wp-content/uploads/2013/04/T-Shirt.jpg"
+        ]
+    }
+    ,
+    {
+        "id": 2,
+        "name": "T-Shirt-2",
+        "price": "79.99",
+        "type": "2",
+        "star": 5,
+        "comments": "",
+        "isHot": true,
+        "isCoupon": false,
+        "imgs": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTWYl3BKnmknLI-nqGgO0lUcV9bZTkNTpRS743Gcb1_hfDh5eJ"
+        ]
+    }
+    ,
+    {
+        "id": 3,
+        "name": "T-Shirt-3",
+        "price": "19.99",
+        "type": "3",
+        "star": 5,
+        "comments": "",
+        "isHot": true,
+        "isCoupon": false,
+        "imgs": [
+            "http://1.bp.blogspot.com/-RkmGzSewVNE/UY9fHnXa17I/AAAAAAAAABw/qTeNlcO48KQ/s1600/obey-clothing-posse-script-t-shirt-black-front.jpg"
+
+        ]
+    }
+    ,
+    {
+        "id": 4,
+        "name": "T-Shirt-4",
+        "price": "99.99",
+        "type": "4",
+        "star": 5,
+        "comments": "",
+        "isHot": false,
+        "isCoupon": false,
+        "imgs": [
+            "http://images.t-shirts.com/blank-turquoise-front-hr.jpg"
+        ]
+    }
+    ,
+    {
+        "id": 5,
+        "name": "T-Shirt-5",
+        "price": "9.99",
+        "type": "4",
+        "star": 5,
+        "comments": "",
+        "isHot": false,
+        "isCoupon": false,
+        "imgs": [
+            "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRVTX9CtEOiC5UucbelQno6bKxspP_E4Qi5HCLavKFMcDOfd3UB"
+        ]
+    }
+]

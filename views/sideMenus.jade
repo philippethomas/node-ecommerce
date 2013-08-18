@@ -1,0 +1,23 @@
+div.row#sideMenu
+    div.col-lg-3
+        div.box.outer-shadow
+            a#shopCart.white.hint--right(data-hint="Click to view details") <i class="icon-shopping-cart"><span>Shopping Cart</span></i>
+        div.hide#cartDetail
+            ul
+        div.box.outer-shadow
+            a#ask.white.hint--right(data-hint="Click to ask") <i class="icon-question"><span>Asking</span></i>
+
+div.row
+    div.col-lg-3
+        div#chat.hidden
+            div.chat-panel
+                div.chat-heading
+                    a.white.hint--right(data-hint="Enlarge")
+                        i.icon-zoom-in
+                div.row
+                    div.col-lg-12#chatWindow
+                div.chat-footer
+                    div.form-inline
+                        input#chatMsg(type="text",placeholder="Enter message here...")
+                        a.btn.btn-success.btn-xs#chatSend
+                            i.icon-mail-reply
