@@ -13,6 +13,7 @@ var stylus = require('stylus');
 var nib = require('nib');
 var app = express();
 
+
 // use nib with stylus
 function nib_compile(str, path) {
     return stylus(str)
@@ -23,7 +24,7 @@ function nib_compile(str, path) {
 }
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.favicon());
@@ -43,10 +44,20 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+
+var admin_chat = require('./routes/adminChat');
+app.get('/adminchat',admin_chat.admin_chat);
+
 app.get('/products/pager/:pageNumber',productApi.FindAll);
 app.post('/products',productApi.Save);
 app.get('/products/:id',productApi.FindById);
 
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
+
+require('./routes/socketApi').socket_start(io);
+
+
+server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

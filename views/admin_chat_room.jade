@@ -1,0 +1,33 @@
+doctype 5
+html
+    head
+        title= title
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+        link(rel='stylesheet', href='/stylesheets/hint.css')
+        link(rel='stylesheet', href='/stylesheets/chat.css')
+        link(rel='stylesheet', href='/stylesheets/shopcart.css')
+        link(rel='stylesheet', href='/stylesheets/slider.css')
+        link(rel='stylesheet', href='/stylesheets/searchPanel.css')
+        link(rel='stylesheet', href='/stylesheets/app.css')
+    body
+        div.container
+            include  header
+            div.row
+                div.col-lg-3
+                    div#chat
+                        div.chat-panel
+                            div.chat-heading
+                                a.white.hint--right(data-hint="Enlarge")
+                                    i.icon-zoom-in
+                            div.row
+                                div.col-lg-12#chatWindow
+                            div.chat-footer
+                                div.form-inline
+                                    input#chatMsg(type="text",placeholder="Enter message here...")
+                                    a.btn.btn-success.btn-xs#chatSend
+                                        i.icon-mail-reply
+
+    script(type='text/javascript',src='//code.jquery.com/jquery-1.10.1.min.js')
+    script(src="/socket.io/socket.io.js")
+    script(src="/javascripts/admin_chat.js")

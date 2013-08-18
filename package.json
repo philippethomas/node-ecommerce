@@ -11,6 +11,7 @@
         "stylus": "latest",
         "socket.io": "latest",
         "nib": "latest",
-        "mongoose": "latest"
+        "mongoose": "latest",
+        "socket.io":"latest"
     }
 }

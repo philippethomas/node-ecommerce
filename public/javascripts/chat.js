@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-//var socket = io.connect('http://localhost');
+var client_socket = io.connect('http://localhost/ask');
 
 $(function(){
 
@@ -19,13 +19,22 @@ $(function(){
          var h=today.getHours();
          var m=today.getMinutes();
          var s=today.getSeconds();
+         var asking = $('#chatMsg').val();
          var sendMsg = '<span class="msg-block"><span class="time">'+ h + ":" + m +":" + s
              +'</span><span class="msg">'
-             +$('#chatMsg').val()
-             +'</span></span>'
+             + asking
+             +'</span></span>'  ;
 
 
          $('#chatWindow').append(sendMsg);
          $('#chatMsg').val('');
+         client_socket.emit("ask",{ "data" : asking });
+         client_socket.on("answer", function(data){
+             var answer =  '<span class="msg-block"><span class="time">'+ h + ":" + m +":" + s
+                 +'</span><span class="msg-reply">'
+                 +data
+                 +'</span></span>';
+             $('#chatWindow').append(answer);
+         });
      })  ;
 })  ;
