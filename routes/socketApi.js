@@ -7,22 +7,22 @@
  */
 
 exports.socket_start = function (io) {
-    var ask = io.of('/ask');
-    var answer = io.of('/answer');
-
-    ask.on('connection', function(socket){
-
-    })  ;
+//    var ask = io.of('/ask');
+//    var answer = io.of('/answer');
+//
+//    ask.on('connection', function(socket){
+//
+//    })  ;
     io.sockets.on('connection', function (socket) {
-        socket.on('ask', function (from, msg) {
-            socket.emit('answer');
+        socket.on('ask', function (msg) {
+            socket.emit('answer',msg);
         });
-        socket.on('answer', function (from, msg) {
-
+        socket.on('answer', function (msg) {
+            socket.emit('ask',msg);
         });
-        socket.on('disconnect', function (from, msg) {
-
-        });
+//        socket.on('disconnect', function (from, msg) {
+//
+//        });
     });
 
 };
