@@ -16,7 +16,7 @@ $(function(){
 
         var ask =  '<span class="msg-block"><span class="time">'+ h + ":" + m +":" + s
             +'</span><span class="msg">'
-            +data
+            +data.data
             +'</span></span>';
         $('#chatWindow').append(ask);
     });
