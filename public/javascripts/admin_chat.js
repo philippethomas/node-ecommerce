@@ -19,11 +19,11 @@ var adminChatModel = function(options){
         var s=today.getSeconds();
         var sendMsgBlock =  '<span class="msg-block"><span class="time">'+ h + ":" + m +":" + s
             +'</span><span class="msg-reply">'
-            + self.answer
+            + self.answer()
             +'</span></span>'  ;
         //
         $('#'+self.clientId+'win').append(sendMsgBlock);
-        admin_socket.emit("answer",{ "to": admin_to, "body" : self.answer });
+        admin_socket.emit("answer",{ "to": admin_to, "body" : self.answer() });
         this.answer('');
     };
 }   ;
@@ -32,11 +32,11 @@ var adminChatCollModel = function(items){
      var self = this;
     this.lists = ko.observableArray(items);
     this.rows = ko.computed(function(){
-        if(!items || items.length == 0)
-            return;
+//        if(!items || items.length == 0)
+//            return;
         var result = [], row, cols = 4;
-        for (var i = 0 , j = self.lists.length; i < j; i++) {
-            var item = self.lists[i];
+        for (var i = 0 , j = self.lists().length; i < j; i++) {
+            var item = self.lists()[i];
             if (i % cols === 0) {
                 if (row)
                     result.push(row);
@@ -48,7 +48,7 @@ var adminChatCollModel = function(items){
             result.push(row);
         }
         return result;
-    },this);
+    },self);
 }   ;
 var admin_to = null;
 var clients_tos = [];
