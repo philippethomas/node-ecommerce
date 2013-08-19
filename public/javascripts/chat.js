@@ -14,11 +14,8 @@ $(function(){
     $('#ask').click(function(){
         $('div.chat-panel').toggleClass('hidden');
         //register
-        if($('#ask').hasClass('hidden'))  {
+        if($('div.chat-panel').hasClass('hidden'))  {
             client_socket.emit("unregister",{'role':0});
-//            $('input.chatMsg').keypress(function(){
-//
-//            });
         }
         else
             client_socket.emit("register",{'role':0});
