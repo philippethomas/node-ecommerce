@@ -7,17 +7,18 @@ div.row#sideMenu
         div.box.outer-shadow
             a#ask.white.hint--right(data-hint="Click to ask") <i class="icon-question"><span>Asking</span></i>
 
-div.row
+div.row#chat
     div.col-lg-3
-        div#chat.hidden
-            div.chat-panel
+            div.chat-panel.hidden
                 div.chat-heading
-                    a.white.hint--right(data-hint="Enlarge")
+                    a.white.hint--right.pull-left(data-hint="Enlarge")
                         i.icon-zoom-in
+                    a.white.pull-right(data-hint="Close")
+                        span &times;
                 div.row
-                    div.col-lg-12#chatWindow
+                    div.col-lg-12.chatWindow
                 div.chat-footer
                     div.form-inline
-                        input#chatMsg(type="text",placeholder="Enter message here...")
-                        a.btn.btn-success.btn-xs#chatSend
+                        input.chatMsg(type="text",placeholder="Enter message here...")
+                        a.btn.btn-success.btn-xs.chatSend
                             i.icon-mail-reply

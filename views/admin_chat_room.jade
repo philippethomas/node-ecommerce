@@ -11,23 +11,27 @@ html
         link(rel='stylesheet', href='/stylesheets/searchPanel.css')
         link(rel='stylesheet', href='/stylesheets/app.css')
     body
-        div.container
-            include  header
-            div.row
-                div.col-lg-3
-                    div#chat
-                        div.chat-panel
+        include  header
+        div.container#adminChatRoom(data-bind="foreach: rows")
+            div.row#adminChat(data-bind="foreach:$data")
+                div.col-lg-4
+                        div.chat-panel(data-bind="attr:{clientId:clientId}")
                             div.chat-heading
                                 a.white.hint--right(data-hint="Enlarge")
                                     i.icon-zoom-in
+                                a.white.pull-right(data-hint="Close")
+                                    span &times;
                             div.row
-                                div.col-lg-12#chatWindow
+                                div.col-lg-12.chatWindow(data-bind="attr:{id:clientId+'win'}")
                             div.chat-footer
                                 div.form-inline
-                                    input#chatMsg(type="text",placeholder="Enter message here...")
-                                    a.btn.btn-success.btn-xs#chatSend
+                                    input.chatMsg(type="text",placeholder="Enter message here...",data-bind="text:answer")
+                                    a.btn.btn-success.btn-xs.chatSend(data-bind="click:sendMsg")
                                         i.icon-mail-reply
 
     script(type='text/javascript',src='//code.jquery.com/jquery-1.10.1.min.js')
     script(src="/socket.io/socket.io.js")
+    script(src="/javascripts/chatWidget.js")
+    script(src="/javascripts/thirds/underscore-min.js")
+    script(src="/javascripts/thirds/knockout.js")
     script(src="/javascripts/admin_chat.js")

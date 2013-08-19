@@ -7,41 +7,56 @@
  */
 
 var client_socket = io.connect('http://localhost');
+var client_to = null;
 
 $(function(){
 
     $('#ask').click(function(){
-        $('#chat').toggleClass('hidden');
+        $('div.chat-panel').toggleClass('hidden');
+        //register
+        if($('#ask').hasClass('hidden'))  {
+            client_socket.emit("unregister",{'role':0});
+//            $('input.chatMsg').keypress(function(){
+//
+//            });
+        }
+        else
+            client_socket.emit("register",{'role':0});
     })  ;
-
-    client_socket.on("answer", function(data){
+    // send ask , listen answer
+    client_socket.on("answer", function(msg){
         var today=new Date();
         var h=today.getHours();
         var m=today.getMinutes();
         var s=today.getSeconds();
+        if(msg.from)
+            client_to = msg.from;
 
         var answer =  '<span class="msg-block"><span class="time">'+ h + ":" + m +":" + s
             +'</span><span class="msg-reply">'
-            +data.data
+            + "admin answer:" + msg.body
             +'</span></span>';
-        $('#chatWindow').append(answer);
+        $('div.chatWindow').append(answer);
     });
 
-     $('#chatSend').on('click',function(){
+     $('a.chatSend').on('click',function(){
+         var inputMsg = $('input.chatMsg');
+         var chatWin = $('div.chatWindow');
          var today=new Date();
          var h=today.getHours();
          var m=today.getMinutes();
          var s=today.getSeconds();
-         var asking = $('#chatMsg').val();
+         var asking = inputMsg.val();
          var sendMsg = '<span class="msg-block"><span class="time">'+ h + ":" + m +":" + s
              +'</span><span class="msg">'
              + asking
              +'</span></span>'  ;
-
-
-         $('#chatWindow').append(sendMsg);
-         $('#chatMsg').val('');
-         client_socket.emit("ask",{ "data" : asking });
+         chatWin.append(sendMsg);
+         inputMsg.val('');
+         if(client_to === null)
+            client_socket.emit("ask",{ "body" : asking });
+         else
+            client_socket.emit("ask",{ "to" : client_to, "body" : asking });
 
      })  ;
 })  ;
