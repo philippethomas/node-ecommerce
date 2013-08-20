@@ -6,6 +6,6 @@
  * To change this template use File | Settings | File Templates.
  */
 
-exports.admin_chat = function (req, res) {
+exports.admin_chat_room = function (req, res) {
     res.render("admin_chat_room");
 }

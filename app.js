@@ -5,8 +5,8 @@
 
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
-var productApi = require("./apis/productApi");
+
+
 var http = require('http');
 var path = require('path');
 var stylus = require('stylus');
@@ -45,10 +45,11 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 
 //route to page
-var admin_chat = require('./routes/adminChat');
-app.get('/adminchat',admin_chat.admin_chat);
+var admin_chat_room = require('./routes/admin_chat_room');
+app.get('/admin/chat',admin_chat_room.admin_chat_room);
 //route to rest api
-app.get('/products/pager/:pageNumber',productApi.FindAll);
+var productApi = require("./apis/productApi");
+app.get('/products/page/:pageNumber',productApi.FindAll);
 app.post('/products',productApi.Save);
 app.get('/products/:id',productApi.FindById);
 
