@@ -39,17 +39,17 @@ var ShopCart = (function () {
     };
 
     cart.html = function () {
-        var html = '<li class="title"><span class="floatLeft">CHECKOUT<span class="floatRight">' +cart.count()+' ITEMS</span></li>';
+        var html = '<li class="title"><span class="floatLeft">CHECKOUT<span class="floatRight">' + cart.count() + ' ITEMS</span></li>';
         var total = 0;
         $.each(Object.keys(context), function (index, key) {
-            html += '<li class="item"><span class="thumb"><img src="'+context[key].src+'">' //+ context[key].name
+            html += '<li class="item"><span class="thumb"><img src="' + context[key].src + '">' //+ context[key].name
                 + '</span><span class="price">$' + context[key].price
                 + '</span><span class="quantity badge">' + context[key].quantity + '</span>'
                 + '<a class="remove" onclick="deleteCartItemFrom(' + context[key].id
                 + ')"><i class="icon-remove"></i></a>' + '</li>';
             total += context[key].price * context[key].quantity;
         });
-        html +='<li>Total : $'+Number(total).toFixed(2)+'<a class="btn btn-success">Continue</a> </li>';
+        html += '<li>Total : $' + Number(total).toFixed(2) + '<a class="btn btn-success">Continue</a> </li>';
         return html;
     };
     return cart;

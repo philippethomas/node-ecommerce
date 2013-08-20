@@ -1,11 +1,12 @@
-body{
-    background: #d2e0e2 ;
+body {
+    background: #d2e0e2;
 }
 
-.header{
+.header {
     background-color: #a0c3cc;
 }
-a.brand{
+
+a.brand {
     display: block;
     float: left;
     padding: 10px 20px 10px;
@@ -13,54 +14,60 @@ a.brand{
     font-size: 20px;
     font-weight: 200;
 }
-a.white{
-    color:#ffffff;
+
+a.white {
+    color: #ffffff;
 }
-a.white:hover{
+
+a.white:hover {
     text-decoration: none;
     cursor: pointer;
 }
-a.black{
+
+a.black {
     color: #193b4d;
 }
-a.black:hover{
+
+a.black:hover {
     text-decoration: none;
 }
 
-a.remove{
-    color:#f0ad4e;
+a.remove {
+    color: #f0ad4e;
     padding-left: 10px;
 }
-a.remove:hover{
+
+a.remove:hover {
     text-decoration: none;
     cursor: pointer;
 }
-#priceContent{
+
+#priceContent {
     margin-top: 20px;
 }
 
-#panel b{
-    margin-left:15px;
-    margin-right:15px;
+#panel b {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 /*.fly-to-cart{*/
-    /*animation: buy 3s;*/
-    /*-webkit-animation: buy 3s;*/
+/*animation: buy 3s;*/
+/*-webkit-animation: buy 3s;*/
 /*}*/
 /*@keyframes buy {*/
-    /*0% {transform: rotate(0deg); }*/
-    /*25% { transform: rotate(30deg); }*/
-    /*50% { transform: rotate(120deg); }*/
-    /*100% { transform: rotate(360deg); }*/
+/*0% {transform: rotate(0deg); }*/
+/*25% { transform: rotate(30deg); }*/
+/*50% { transform: rotate(120deg); }*/
+/*100% { transform: rotate(360deg); }*/
 /*}*/
 
 /*@-webkit-keyframes buy{*/
 
-    /*0% {  position: fixed; }*/
-    /*25% { -webkit-transform: rotate(30deg); }*/
-    /*50% { -webkit-transform: rotate(120deg); }*/
-    /*100% {-webkit-transform: translate(0px,100px); }*/
+/*0% {  position: fixed; }*/
+/*25% { -webkit-transform: rotate(30deg); }*/
+/*50% { -webkit-transform: rotate(120deg); }*/
+/*100% {-webkit-transform: translate(0px,100px); }*/
 /*}*/
 
 .one-edge-shadow {
@@ -68,39 +75,41 @@ a.remove:hover{
     -moz-box-shadow: 0 8px 6px -6px black;
     box-shadow: 0 8px 6px -6px black;
 }
+
 .inner-shadow {
-    -moz-box-shadow:    inset 0 0 10px #000000;
+    -moz-box-shadow: inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
-    box-shadow:         inset 0 0 10px #000000;
-}
-.outer-shadow {
-    -webkit-box-shadow: 3px 3px 3px 3px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow:    3px 3px 3px 3px #ccc;  /* Firefox 3.5 - 3.6 */
-    box-shadow:         3px 3px 3px 3px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    box-shadow: inset 0 0 10px #000000;
 }
 
+.outer-shadow {
+    -webkit-box-shadow: 3px 3px 3px 3px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow: 3px 3px 3px 3px #ccc; /* Firefox 3.5 - 3.6 */
+    box-shadow: 3px 3px 3px 3px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
 
 /*.arrow-up {*/
-    /*width: 0;*/
-    /*height: 0;*/
-    /*border-left: 5px solid transparent;*/
-    /*border-right: 5px solid transparent;*/
-    /*border-bottom: 5px solid black;*/
-    /*margin-left:15px;*/
+/*width: 0;*/
+/*height: 0;*/
+/*border-left: 5px solid transparent;*/
+/*border-right: 5px solid transparent;*/
+/*border-bottom: 5px solid black;*/
+/*margin-left:15px;*/
 /*}*/
 /*.box{*/
 
 /*}*/
 
-#mainContent{
+#mainContent {
     margin-top: 50px;
-    margin-left:100px;
+    margin-left: 100px;
 }
 
-#mainContent > ul{
+#mainContent > ul {
     list-style: none;
 }
-#mainContent > ul > li{
+
+#mainContent > ul > li {
     display: inline-block;
 }
 
@@ -109,12 +118,13 @@ a.remove:hover{
     width: 220px;
 }
 
-.polaroid span.Hot{
-    -webkit-transform:rotate(340deg);
-    transform:rotate(30deg);
+.polaroid span.Hot {
+    -webkit-transform: rotate(340deg);
+    transform: rotate(30deg);
     z-index: 3;
     position: absolute;
 }
+
 .polaroid img {
     border: 10px solid #fff;
     border-bottom: 45px solid #fff;
@@ -133,12 +143,12 @@ a.remove:hover{
     color: #888;
 }
 
-.widget{
+.widget {
     margin-top: 5px;
     margin-bottom: 20px;
 }
 
-.polaroid .overlay{
+.polaroid .overlay {
     display: block;
     position: absolute;
     top: 0;
@@ -149,7 +159,7 @@ a.remove:hover{
     box-sizing: border-box;
 }
 
-.polaroid .overlay .overlay-top{
+.polaroid .overlay .overlay-top {
     position: relative;
     width: 200px;
     left: 50%;
@@ -159,9 +169,9 @@ a.remove:hover{
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0.18),0 0 3px 0 rgba(0,0,0,0.2);
-    -moz-box-shadow: 0 0 0 0 rgba(0,0,0,0.18),0 0 3px 0 rgba(0,0,0,0.2);
-    box-shadow: 0 0 0 0 rgba(0,0,0,0.18),0 0 3px 0 rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.18), 0 0 3px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.18), 0 0 3px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.18), 0 0 3px 0 rgba(0, 0, 0, 0.2);
     height: 40px;
 }
 
@@ -178,7 +188,7 @@ a.remove:hover{
     user-select: none;
 }
 
-.polaroid .overlay .overlay-top ul.action > li{
+.polaroid .overlay .overlay-top ul.action > li {
     display: inline-block;
     margin-right: 10px;
     width: 30px;
@@ -187,31 +197,32 @@ a.remove:hover{
     line-height: 18px;
 }
 
-.polaroid .overlay .overlay-top ul.action li a:hover,link{
-      text-decoration: none;
-      color:#428bca;
+.polaroid .overlay .overlay-top ul.action li a:hover, link {
+    text-decoration: none;
+    color: #428bca;
 }
+
 /*.widget-content .overlay .overlay-top ul.action li a:hover:after{*/
-    /*background: #333;*/
-    /*background: rgba(0,0,0,.8);*/
-    /*border-radius: 5px;*/
-    /*bottom: 26px;*/
-    /*color: #fff;*/
-    /*content: attr(title);*/
-    /*left: 20%;*/
-    /*padding: 5px 15px;*/
-    /*position: absolute;*/
-    /*z-index: 98;*/
-    /*width: 60px;*/
-    /*content: attr(title);*/
+/*background: #333;*/
+/*background: rgba(0,0,0,.8);*/
+/*border-radius: 5px;*/
+/*bottom: 26px;*/
+/*color: #fff;*/
+/*content: attr(title);*/
+/*left: 20%;*/
+/*padding: 5px 15px;*/
+/*position: absolute;*/
+/*z-index: 98;*/
+/*width: 60px;*/
+/*content: attr(title);*/
 /*}*/
 /*.widget-content .overlay .overlay-top ul.action li a:hover:before{*/
-    /*border: solid;*/
-    /*border-color: #333 transparent;*/
-    /*border-width: 6px 6px 0 6px;*/
-    /*bottom: 20px;*/
-    /*content: "";*/
-    /*left: 50%;*/
-    /*position: absolute;*/
-    /*z-index: 99;*/
+/*border: solid;*/
+/*border-color: #333 transparent;*/
+/*border-width: 6px 6px 0 6px;*/
+/*bottom: 20px;*/
+/*content: "";*/
+/*left: 50%;*/
+/*position: absolute;*/
+/*z-index: 99;*/
 /*}*/

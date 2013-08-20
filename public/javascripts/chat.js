@@ -9,51 +9,51 @@
 var client_socket = io.connect('http://localhost');
 var client_to = null;
 
-$(function(){
+$(function () {
 
-    $('#ask').click(function(){
+    $('#ask').click(function () {
         $('div.chat-panel').toggleClass('hidden');
         //register
-        if($('div.chat-panel').hasClass('hidden'))  {
-            client_socket.emit("unregister",{'role':0});
+        if ($('div.chat-panel').hasClass('hidden')) {
+            client_socket.emit("unregister", {'role': 0});
         }
         else
-            client_socket.emit("register",{'role':0});
-    })  ;
+            client_socket.emit("register", {'role': 0});
+    });
     // send ask , listen answer
-    client_socket.on("answer", function(msg){
-        var today=new Date();
-        var h=today.getHours();
-        var m=today.getMinutes();
-        var s=today.getSeconds();
-        if(msg.from)
+    client_socket.on("answer", function (msg) {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        if (msg.from)
             client_to = msg.from;
 
-        var answer =  '<span class="msg-block"><span class="time">'+ h + ":" + m +":" + s
-            +'</span><span class="msg-reply">'
+        var answer = '<span class="msg-block"><span class="time">' + h + ":" + m + ":" + s
+            + '</span><span class="msg-reply">'
             + "admin answer:" + msg.body
-            +'</span></span>';
+            + '</span></span>';
         $('div.chatWindow').append(answer);
     });
 
-     $('a.chatSend').on('click',function(){
-         var inputMsg = $('input.chatMsg');
-         var chatWin = $('div.chatWindow');
-         var today=new Date();
-         var h=today.getHours();
-         var m=today.getMinutes();
-         var s=today.getSeconds();
-         var asking = inputMsg.val();
-         var sendMsg = '<span class="msg-block"><span class="time">'+ h + ":" + m +":" + s
-             +'</span><span class="msg">'
-             + asking
-             +'</span></span>'  ;
-         chatWin.append(sendMsg);
-         inputMsg.val('');
-         if(client_to === null)
-            client_socket.emit("ask",{ "body" : asking });
-         else
-            client_socket.emit("ask",{ "to" : client_to, "body" : asking });
+    $('a.chatSend').on('click', function () {
+        var inputMsg = $('input.chatMsg');
+        var chatWin = $('div.chatWindow');
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        var asking = inputMsg.val();
+        var sendMsg = '<span class="msg-block"><span class="time">' + h + ":" + m + ":" + s
+            + '</span><span class="msg">'
+            + asking
+            + '</span></span>';
+        chatWin.append(sendMsg);
+        inputMsg.val('');
+        if (client_to === null)
+            client_socket.emit("ask", { "body": asking });
+        else
+            client_socket.emit("ask", { "to": client_to, "body": asking });
 
-     })  ;
-})  ;
+    });
+});

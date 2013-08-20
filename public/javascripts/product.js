@@ -20,8 +20,8 @@ var productListModel = function (items) {
         var filters = self.filter_types();
         var filterArrays = null;
         if (self.filter_types() === 'all') {
-            filterArrays = ko.utils.arrayFilter(self.lists(), function(item){
-                 return (item.price >= self.min_price() && item.price <= self.max_price())
+            filterArrays = ko.utils.arrayFilter(self.lists(), function (item) {
+                return (item.price >= self.min_price() && item.price <= self.max_price())
             });
         } else {
             filterArrays = ko.utils.arrayFilter(self.lists(), function (item) {
@@ -111,10 +111,10 @@ var productModel = function (data) {
     this.Detail = function (item) {
 
     };
-    this.Buy = function(item,evt){
+    this.Buy = function (item, evt) {
 
         ShopCart.addItem(item);
-        var currentImg = $('#'+item.id).parent('.polaroid');
+        var currentImg = $('#' + item.id).parent('.polaroid');
 //        currentImg.addClass('fly-to-cart')
         var originOffset = currentImg.offset();
         var originTop = originOffset.top;
@@ -122,15 +122,15 @@ var productModel = function (data) {
         var originWidth = currentImg.width();
         var originHeight = currentImg.height();
         //consider use css3 transform - translate and transition
-        currentImg.css({position:'fixed',top:originTop,left: originLeft})
-            .animate({top:$('#shopCart').offset().top,left:$('#shopCart').offset().left,width:'1%',height:'1%'},3000,
-            function(){
+        currentImg.css({position: 'fixed', top: originTop, left: originLeft})
+            .animate({top: $('#shopCart').offset().top, left: $('#shopCart').offset().left, width: '1%', height: '1%'}, 3000,
+            function () {
                 currentImg.css({
-                    position:'relative',
-                    width:originWidth,
-                    height:originHeight,
-                    top:'',
-                    left:''
+                    position: 'relative',
+                    width: originWidth,
+                    height: originHeight,
+                    top: '',
+                    left: ''
                 });
             });
 

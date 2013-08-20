@@ -6,7 +6,7 @@
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
-var productApi = require("./routes/productApi");
+var productApi = require("./apis/productApi");
 var http = require('http');
 var path = require('path');
 var stylus = require('stylus');
@@ -43,19 +43,19 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
 
+//route to page
 var admin_chat = require('./routes/adminChat');
 app.get('/adminchat',admin_chat.admin_chat);
-
+//route to rest api
 app.get('/products/pager/:pageNumber',productApi.FindAll);
 app.post('/products',productApi.Save);
 app.get('/products/:id',productApi.FindById);
 
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
-
-require('./routes/socketApi').socket_start(io);
+//route to socket api
+require('./apis/socketApi').socket_start(io);
 
 
 server.listen(app.get('port'), function(){

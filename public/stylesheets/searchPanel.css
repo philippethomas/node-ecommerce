@@ -1,9 +1,11 @@
-#panel{
-    margin-top:60px;
+#panel {
+    margin-top: 60px;
 }
-#panel a:hover{
-    color:#428bca;
+
+#panel a:hover {
+    color: #428bca;
 }
-#panel a.selected{
-    color:#428bca;
+
+#panel a.selected {
+    color: #428bca;
 }

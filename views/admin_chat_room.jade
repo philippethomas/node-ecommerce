@@ -12,20 +12,20 @@ html
         link(rel='stylesheet', href='/stylesheets/app.css')
     body
         include  header
-        div.container#adminChatRoom(data-bind="foreach: rows")
-            div.row#adminChat(data-bind="foreach:$data")
-                div.col-lg-4
+        div.container#adminChatRoom(data-bind="foreach: lists")
+            div.row#adminChat
+                div.col-md-8
                         div.chat-panel(data-bind="attr:{clientId:clientId}")
-                            div.chat-heading
+                            div.chat-heading(data-bind="text:clientId")
                                 a.white.hint--right(data-hint="Enlarge")
                                     i.icon-zoom-in
                                 a.white.pull-right(data-hint="Close")
                                     span &times;
                             div.row
-                                div.col-lg-12.chatWindow(data-bind="attr:{id:clientId+'win'}")
+                                div.col-md-12.chatWindow(data-bind="attr:{id:clientId+'win'}")
                             div.chat-footer
                                 div.form-inline
-                                    input.chatMsg(type="text",placeholder="Enter message here...",data-bind="text:answer")
+                                    input.chatMsg(type="text",placeholder="Enter message here...",data-bind="value:answer")
                                     a.btn.btn-success.btn-xs.chatSend(data-bind="click:sendMsg")
                                         i.icon-mail-reply
 

@@ -6,8 +6,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var chatWidget = function(option){
-    this.render = function(){
+var chatWidget = function (option) {
+    this.render = function () {
         this.html = '<div class="chat-panel">' +
             '<div class="chat-heading"><a data-hint="Enlarge" class="white hint--right pull-left"><i class="icon-zoom-in"></i></a>' +
             '<a data-hint="Close" class="white pull-right"><span>×</span></a></div>' +
