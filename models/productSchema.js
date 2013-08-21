@@ -20,3 +20,5 @@ var productSchema = new Schema({
     isHot: Boolean,
     images: Array
 });
+
+module.exports = mongoose.model('Product', productSchema);

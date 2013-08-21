@@ -1,0 +1,21 @@
+doctype 5
+html
+    head
+        title= title
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+        link(rel='stylesheet', href='/stylesheets/hint.css')
+        link(rel='stylesheet', href='/stylesheets/chat.css')
+        link(rel='stylesheet', href='/stylesheets/shopcart.css')
+        link(rel='stylesheet', href='/stylesheets/slider.css')
+        link(rel='stylesheet', href='/stylesheets/searchPanel.css')
+        link(rel='stylesheet', href='/stylesheets/app.css')
+    body
+        include  header
+        div.container
+            table.table.table-bordered
+                thead
+                    tr
+                        th Name
+                        th Price
+                tbody#productBody(data-bind="foreach:lists")
