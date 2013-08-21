@@ -8,9 +8,10 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var ObjectId = Schema.Types.ObjectId;
 
 var productSchema = new Schema({
-    id: Number,
+    id: ObjectId,
     name: String,
     price: String,
     price2: String,
