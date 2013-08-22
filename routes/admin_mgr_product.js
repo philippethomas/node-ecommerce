@@ -7,5 +7,5 @@
  */
 
 exports.admin_mgr_product = function(req,res){
-
+      res.render("admin_mgr_product");
 }

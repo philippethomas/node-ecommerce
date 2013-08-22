@@ -11,7 +11,7 @@ var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
 var productSchema = new Schema({
-    id: ObjectId,
+//    id: ObjectId,
     name: String,
     price: String,
     price2: String,

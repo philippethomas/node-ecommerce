@@ -48,11 +48,19 @@ app.get('/', routes.index);
 //route to page
 var admin_chat_room = require('./routes/admin_chat_room');
 app.get('/admin/chat',admin_chat_room.admin_chat_room);
+
+var admin_mgr_product = require('./routes/admin_mgr_product');
+app.get('/admin/mgr/product',admin_mgr_product.admin_mgr_product);
+
+
 //route to rest api
 var productApi = require("./apis/productApi");
+
 app.get('/products/page/:pageNumber',productApi.FindAll);
 app.post('/products',productApi.Save);
 app.get('/products/:id',productApi.FindById);
+app.delete('/products/:id',productApi.Remove);
+app.delete('/products',productApi.RemoveAll);
 
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
