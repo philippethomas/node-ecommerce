@@ -12,7 +12,6 @@
         "socket.io": "latest",
         "nib": "latest",
         "mongoose": "latest",
-        "socket.io":"latest" ,
         "underscore":"latest"
     }
 }
